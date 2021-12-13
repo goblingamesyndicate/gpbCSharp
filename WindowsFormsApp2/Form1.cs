@@ -26,6 +26,7 @@ namespace WindowsFormsApp2
         {
             arrPerson[zaehler] = new Person(tbVname.Text, tbNname.Text, tbEmail.Text);
             libPerson.Items.Add(string.Format("{0} {1} {2}", tbVname.Text, tbNname.Text, tbEmail.Text)); // mit string.format() string bauen, weil Add() nur ein arg erwartet
+            cbPerson.Items.Add(string.Format("{0} {1} {2}", tbVname.Text, tbNname.Text, tbEmail.Text));
             zaehler++;
             actAnzahl();
             clearBoxes();
@@ -55,6 +56,13 @@ namespace WindowsFormsApp2
         private void libPerson_SelectedIndexChanged(object sender, EventArgs e)
         {
             fillBoxes(libPerson.SelectedIndex);
+            cbPerson.SelectedIndex = libPerson.SelectedIndex;
+        }
+
+        private void cbPerson_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fillBoxes(cbPerson.SelectedIndex);
+            libPerson.SelectedIndex = cbPerson.SelectedIndex;
         }
 
         private void fillBoxes(int selectedIndex)
@@ -64,8 +72,14 @@ namespace WindowsFormsApp2
                 tbVname.Text = arrPerson[selectedIndex].Vorname;
                 tbNname.Text = arrPerson[selectedIndex].Nachname;
                 tbEmail.Text = arrPerson[selectedIndex].Email;
+                showPicture(selectedIndex);
             }
-            
+        }
+
+        private void showPicture(int index)
+        {
+            string imagepath = string.Format("Images\\{0}.jpg", index);
+            picBPerson.Image = Image.FromFile(imagepath);
         }
     }
 }

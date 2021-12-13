@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.lbVname = new System.Windows.Forms.Label();
             this.lbNname = new System.Windows.Forms.Label();
@@ -38,13 +39,18 @@
             this.btSave = new System.Windows.Forms.Button();
             this.libPerson = new System.Windows.Forms.ListBox();
             this.progBCount = new System.Windows.Forms.ProgressBar();
+            this.cbPerson = new System.Windows.Forms.ComboBox();
+            this.picBLogo = new System.Windows.Forms.PictureBox();
+            this.picBPerson = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBPerson)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 27);
+            this.label1.Location = new System.Drawing.Point(44, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 22);
             this.label1.TabIndex = 0;
@@ -54,7 +60,7 @@
             // 
             this.lbVname.AutoSize = true;
             this.lbVname.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVname.Location = new System.Drawing.Point(45, 107);
+            this.lbVname.Location = new System.Drawing.Point(45, 223);
             this.lbVname.Name = "lbVname";
             this.lbVname.Size = new System.Drawing.Size(70, 15);
             this.lbVname.TabIndex = 1;
@@ -64,7 +70,7 @@
             // 
             this.lbNname.AutoSize = true;
             this.lbNname.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNname.Location = new System.Drawing.Point(45, 141);
+            this.lbNname.Location = new System.Drawing.Point(45, 257);
             this.lbNname.Name = "lbNname";
             this.lbNname.Size = new System.Drawing.Size(77, 15);
             this.lbNname.TabIndex = 2;
@@ -74,7 +80,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(45, 175);
+            this.lbEmail.Location = new System.Drawing.Point(45, 291);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(56, 15);
             this.lbEmail.TabIndex = 3;
@@ -82,21 +88,21 @@
             // 
             // tbVname
             // 
-            this.tbVname.Location = new System.Drawing.Point(181, 105);
+            this.tbVname.Location = new System.Drawing.Point(181, 221);
             this.tbVname.Name = "tbVname";
             this.tbVname.Size = new System.Drawing.Size(208, 20);
             this.tbVname.TabIndex = 4;
             // 
             // tbNname
             // 
-            this.tbNname.Location = new System.Drawing.Point(181, 139);
+            this.tbNname.Location = new System.Drawing.Point(181, 255);
             this.tbNname.Name = "tbNname";
             this.tbNname.Size = new System.Drawing.Size(208, 20);
             this.tbNname.TabIndex = 5;
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(181, 173);
+            this.tbEmail.Location = new System.Drawing.Point(181, 289);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(208, 20);
             this.tbEmail.TabIndex = 6;
@@ -104,7 +110,7 @@
             // btSave
             // 
             this.btSave.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSave.Location = new System.Drawing.Point(290, 225);
+            this.btSave.Location = new System.Drawing.Point(290, 341);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(99, 36);
             this.btSave.TabIndex = 7;
@@ -115,25 +121,56 @@
             // libPerson
             // 
             this.libPerson.FormattingEnabled = true;
-            this.libPerson.Location = new System.Drawing.Point(453, 101);
+            this.libPerson.Location = new System.Drawing.Point(453, 256);
             this.libPerson.Name = "libPerson";
-            this.libPerson.Size = new System.Drawing.Size(191, 160);
+            this.libPerson.Size = new System.Drawing.Size(191, 121);
             this.libPerson.TabIndex = 8;
             this.libPerson.SelectedIndexChanged += new System.EventHandler(this.libPerson_SelectedIndexChanged);
             // 
             // progBCount
             // 
-            this.progBCount.Location = new System.Drawing.Point(49, 53);
+            this.progBCount.Location = new System.Drawing.Point(48, 145);
             this.progBCount.Maximum = 5;
             this.progBCount.Name = "progBCount";
             this.progBCount.Size = new System.Drawing.Size(136, 11);
             this.progBCount.TabIndex = 9;
             // 
+            // cbPerson
+            // 
+            this.cbPerson.FormattingEnabled = true;
+            this.cbPerson.Location = new System.Drawing.Point(453, 220);
+            this.cbPerson.Name = "cbPerson";
+            this.cbPerson.Size = new System.Drawing.Size(191, 21);
+            this.cbPerson.TabIndex = 10;
+            this.cbPerson.SelectedIndexChanged += new System.EventHandler(this.cbPerson_SelectedIndexChanged);
+            // 
+            // picBLogo
+            // 
+            this.picBLogo.Image = ((System.Drawing.Image)(resources.GetObject("picBLogo.Image")));
+            this.picBLogo.Location = new System.Drawing.Point(558, 12);
+            this.picBLogo.Name = "picBLogo";
+            this.picBLogo.Size = new System.Drawing.Size(86, 78);
+            this.picBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBLogo.TabIndex = 11;
+            this.picBLogo.TabStop = false;
+            // 
+            // picBPerson
+            // 
+            this.picBPerson.Location = new System.Drawing.Point(521, 119);
+            this.picBPerson.Name = "picBPerson";
+            this.picBPerson.Size = new System.Drawing.Size(123, 95);
+            this.picBPerson.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBPerson.TabIndex = 12;
+            this.picBPerson.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 298);
+            this.ClientSize = new System.Drawing.Size(670, 460);
+            this.Controls.Add(this.picBPerson);
+            this.Controls.Add(this.picBLogo);
+            this.Controls.Add(this.cbPerson);
             this.Controls.Add(this.progBCount);
             this.Controls.Add(this.libPerson);
             this.Controls.Add(this.btSave);
@@ -146,6 +183,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBPerson)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,6 +202,9 @@
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.ListBox libPerson;
         private System.Windows.Forms.ProgressBar progBCount;
+        private System.Windows.Forms.ComboBox cbPerson;
+        private System.Windows.Forms.PictureBox picBLogo;
+        private System.Windows.Forms.PictureBox picBPerson;
     }
 }
 
